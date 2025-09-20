@@ -36,9 +36,6 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 2rem;
-        justify-content: center; /* Centers horizontally */
-        align-items: center; /* Centers vertically */
-        height: 100vh; /* Example: full viewport height for main */
         padding: 2rem;
         max-width: 1200px;
         margin: auto;
@@ -72,6 +69,35 @@
         padding: 2rem;
         font-size: 0.9rem;
         color: var(--light);
+      }
+      /* Contact Form */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      input,
+      textarea,
+      button {
+        font: inherit;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.375rem;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+      button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      button:hover {
+        background: #1e40af;
       }
       /* Responsive */
       @media (max-width: 768px) {
@@ -153,6 +179,30 @@
         <section id="education">
           <h2>Education</h2>
           <p>Jersey Village High School — High School Diploma (May 2004)</p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact Me</h2>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+          <p style="font-size: 0.9rem; color: var(--light); margin-top: 0.5rem">
+            Or email me directly:
+            <a href="mailto:Justindh85@gmail.com">Justindh85@gmail.com</a>
+          </p>
         </section>
       </aside>
 
