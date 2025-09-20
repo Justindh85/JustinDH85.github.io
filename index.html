@@ -21,7 +21,7 @@
       }
       header {
         background: var(--primary);
-        color: white;
+        color: #fff;
         padding: 2rem 1rem;
         text-align: center;
       }
@@ -50,28 +50,17 @@
       }
       .card {
         background: var(--card);
-        padding: 0.5rem 0.5rem;
+        padding: 1rem;
         border-radius: 0.5rem;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
       }
       .card h3 {
-        display: block;
-        font-size: 1.17em;
-        margin-block-start: 0.5rem;
-        margin-block-end: 0.5rem;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;
-        unicode-bidi: isolate;
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
       }
       .card p {
-        display: block;
-        margin-block-start: 0.5rem;
-        margin-block-end: 0.5rem;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        unicode-bidi: isolate;
+        margin: 0.25rem 0;
       }
       ul {
         list-style: none;
@@ -109,7 +98,7 @@
       }
       button {
         background: var(--primary);
-        color: white;
+        color: #fff;
         border: none;
         cursor: pointer;
         transition: background 0.2s;
@@ -117,11 +106,21 @@
       button:hover {
         background: #1e40af;
       }
+      /* Sticky Sidebar */
+      aside {
+        position: sticky;
+        top: 2rem;
+        align-self: start;
+        height: fit-content;
+      }
       /* Responsive */
       @media (max-width: 768px) {
         main {
           grid-template-columns: 1fr;
           padding: 1rem;
+        }
+        aside {
+          position: static; /* disable sticky on mobile */
         }
       }
     </style>
@@ -133,7 +132,113 @@
     </header>
 
     <main>
-      <!-- Sidebar -->
+      <!-- Left Column -->
+      <div>
+        <section id="experience">
+          <h2>Work Experience</h2>
+          <div class="card">
+            <h3>Full-Stack Developer</h3>
+            <p>Freelance | Houston, TX</p>
+            <p><em>Jun 2004 – Present</em></p>
+          </div>
+          <div class="card">
+            <h3>Vue Developer</h3>
+            <p>Rate Genius | Houston, TX</p>
+            <p><em>May 2022 – Dec 2022</em></p>
+          </div>
+          <div class="card">
+            <h3>Senior WordPress Developer</h3>
+            <p>Golden Obsidian LLC | Houston, TX</p>
+            <p><em>Jul 2021 – Apr 2022</em></p>
+          </div>
+          <div class="card">
+            <h3>Lead Certified Utility Forester</h3>
+            <p>Arborworks Inc. | Oakhurst, CA</p>
+            <p><em>Oct 2020 – May 2021</em></p>
+          </div>
+          <div class="card">
+            <h3>Certified Utility Forester</h3>
+            <p>WTL Corp. | Ukiah, CA</p>
+            <p><em>Sep 2019 – Feb 2020</em></p>
+          </div>
+          <div class="card">
+            <h3>IT/GIS Specialist / Projects Admin Specialist</h3>
+            <p>Philips and Jordan, Inc. | New Castle, CA</p>
+            <p><em>Oct 2018 – Oct 2019</em></p>
+          </div>
+          <div class="card">
+            <h3>Front-End Software Engineer</h3>
+            <p>Tillster Inc. | San Diego, CA</p>
+            <p><em>Jun 2014 – Jun 2016</em></p>
+          </div>
+          <div class="card">
+            <h3>Lead Full Stack PHP Developer</h3>
+            <p>Eton Bioscience | San Diego, CA</p>
+            <p><em>Dec 2012 – May 2014</em></p>
+          </div>
+        </section>
+
+        <section id="portfolio">
+          <h2>Portfolio</h2>
+          <div class="card">
+            <h3>Project One</h3>
+            <p>Brief description of what you built and the value delivered.</p>
+            <p><a href="#">Live Demo</a> | <a href="#">GitHub</a></p>
+          </div>
+          <div class="card">
+            <h3>Project Two</h3>
+            <p>Brief description of what you built and the value delivered.</p>
+            <p><a href="#">Live Demo</a> | <a href="#">GitHub</a></p>
+          </div>
+        </section>
+
+        <section id="services">
+          <h2>Services</h2>
+          <div class="card">
+            <h3>Custom WordPress Development</h3>
+            <p>Themes, plugins, and site builds tailored for your business.</p>
+          </div>
+          <div class="card">
+            <h3>React / Next.js Web Apps</h3>
+            <p>
+              High-performance, modern applications for startups and businesses.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Site Maintenance & Support</h3>
+            <p>
+              Monthly updates, backups, and security monitoring to keep your
+              site running smoothly.
+            </p>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Contact Me</h2>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+          <p style="font-size: 0.9rem; color: var(--light); margin-top: 0.5rem">
+            Or email me directly:
+            <a href="mailto:Justindh85@gmail.com">Justindh85@gmail.com</a>
+          </p>
+        </section>
+      </div>
+
+      <!-- Right Column (Sticky Sidebar) -->
       <aside>
         <section id="about">
           <h2>About Me</h2>
@@ -199,119 +304,6 @@
           <p>Jersey Village High School — High School Diploma (May 2004)</p>
         </section>
       </aside>
-
-      <section id="services">
-        <h2>Services</h2>
-        <div class="card">
-          <h3>Custom WordPress Development</h3>
-          <p>Themes, plugins, and site builds tailored for your business.</p>
-        </div>
-        <div class="card">
-          <h3>React / Next.js Web Apps</h3>
-          <p>
-            High-performance, modern applications for startups and businesses.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Site Maintenance & Support</h3>
-          <p>
-            Monthly updates, backups, and security monitoring to keep your site
-            running smoothly.
-          </p>
-        </div>
-      </section>
-
-      <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="card">
-          <h3>Project One</h3>
-          <p>Brief description of what you built and the value delivered.</p>
-          <p><a href="#">Live Demo</a> | <a href="#">GitHub</a></p>
-        </div>
-        <div class="card">
-          <h3>Project Two</h3>
-          <p>Brief description of what you built and the value delivered.</p>
-          <p><a href="#">Live Demo</a> | <a href="#">GitHub</a></p>
-        </div>
-      </section>
-      <!-- Main Content -->
-      <div>
-        <section id="experience">
-          <h2>Work Experience</h2>
-
-          <div class="card">
-            <h3>Full-Stack Developer</h3>
-            <p>Freelance | Houston, TX</p>
-            <p><em>Jun 2004 – Present</em></p>
-          </div>
-
-          <div class="card">
-            <h3>Vue Developer</h3>
-            <p>Rate Genius | Houston, TX</p>
-            <p><em>May 2022 – Dec 2022</em></p>
-          </div>
-
-          <div class="card">
-            <h3>Senior WordPress Developer</h3>
-            <p>Golden Obsidian LLC | Houston, TX</p>
-            <p><em>Jul 2021 – Apr 2022</em></p>
-          </div>
-
-          <div class="card">
-            <h3>Lead Certified Utility Forester</h3>
-            <p>Arborworks Inc. | Oakhurst, CA</p>
-            <p><em>Oct 2020 – May 2021</em></p>
-          </div>
-
-          <div class="card">
-            <h3>Certified Utility Forester</h3>
-            <p>WTL Corp. | Ukiah, CA</p>
-            <p><em>Sep 2019 – Feb 2020</em></p>
-          </div>
-
-          <div class="card">
-            <h3>IT/GIS Specialist / Projects Admin Specialist</h3>
-            <p>Philips and Jordan, Inc. | New Castle, CA</p>
-            <p><em>Oct 2018 – Oct 2019</em></p>
-          </div>
-
-          <div class="card">
-            <h3>Front-End Software Engineer</h3>
-            <p>Tillster Inc. | San Diego, CA</p>
-            <p><em>Jun 2014 – Jun 2016</em></p>
-          </div>
-
-          <div class="card">
-            <h3>Lead Full Stack PHP Developer</h3>
-            <p>Eton Bioscience | San Diego, CA</p>
-            <p><em>Dec 2012 – May 2014</em></p>
-          </div>
-        </section>
-
-        <section id="contact">
-          <h2>Contact Me</h2>
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-          <p style="font-size: 0.9rem; color: var(--light); margin-top: 0.5rem">
-            Or email me directly:
-            <a href="mailto:Justindh85@gmail.com">Justindh85@gmail.com</a>
-          </p>
-        </section>
-      </div>
     </main>
 
     <footer>
